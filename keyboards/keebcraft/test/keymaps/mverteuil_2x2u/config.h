@@ -1,29 +1,18 @@
-#pragma once
-
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PREONIC_SOUND)
-    // #define STARTUP_SONG SONG(NO_SOUND)
+#    if __has_include("copyright.h")
+#        include "copyright.h"
+#    endif
 
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
-                                }
+#    define AUDIO_CLICKY_DELAY_DURATION 0
+#    define AUDIO_CLICKY_FREQ_DEFAULT 100.0f
+#    define AUDIO_CLICKY_FREQ_MIN 61.0f
+#    define AUDIO_CLICKY_FREQ_RANDOMNESS 0.2f
+#    define DAC_SAMPLE_MAX 7000U
+#    define STARTUP_SONG SONG(WORKMAN_SOUND)
+#    define GOODBYE_SONG SONG(COIN_SOUND)
 #endif
 
-#define TAPPING_TERM 200
-
-#define UNICODE_SELECTED_MODES UC_WINC                                
-#define UNICODE_KEY_WINC KC_LALT
-
 #define MUSIC_MASK (keycode != KC_NO)
-
-
-/* 
- * Underglow Options
- */
-
-#define RGHLIGHT_HUE_STEP 10
-
 
 /*
  * MIDI options

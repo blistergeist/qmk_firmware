@@ -10,20 +10,7 @@
                                 }
 #endif
 
-#define TAPPING_TERM 200
-
-#define UNICODE_SELECTED_MODES UC_WINC                                
-#define UNICODE_KEY_WINC KC_LALT
-
 #define MUSIC_MASK (keycode != KC_NO)
-
-
-/* 
- * Underglow Options
- */
-
-#define RGHLIGHT_HUE_STEP 10
-
 
 /*
  * MIDI options
@@ -37,6 +24,7 @@
 */
 
 #define MIDI_BASIC
+#define TAP_CODE_DELAY 10
 
 /* enable advanced MIDI features:
    - MIDI notes can be added to the keymap

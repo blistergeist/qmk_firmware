@@ -10,20 +10,7 @@
                                 }
 #endif
 
-#define TAPPING_TERM 200
-
-#define UNICODE_SELECTED_MODES UC_WINC                                
-#define UNICODE_KEY_WINC KC_LALT
-
 #define MUSIC_MASK (keycode != KC_NO)
-
-
-/* 
- * Underglow Options
- */
-
-#define RGHLIGHT_HUE_STEP 10
-
 
 /*
  * MIDI options
@@ -37,7 +24,15 @@
 */
 
 #define MIDI_BASIC
-
+#define RGBLIGHT_SLEEP
+#define TAPPING_TOGGLE 2
+#define ALT_F4 LALT(KC_F4)
+#define CTALDEL LSFT(LCTL(KC_ESC))
+#define NO_DEBUG
+#define CTLZ LCTL(KC_Z)
+#define CTLX LCTL(KC_X)
+#define CTLC LCTL(KC_C)
+#define CTLV LCTL(KC_V)
 /* enable advanced MIDI features:
    - MIDI notes can be added to the keymap
    - Octave shift and transpose

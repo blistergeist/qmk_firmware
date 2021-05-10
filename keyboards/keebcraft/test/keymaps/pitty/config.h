@@ -1,28 +1,16 @@
 #pragma once
 
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PREONIC_SOUND)
-    // #define STARTUP_SONG SONG(NO_SOUND)
 
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
-                                }
+
+#    define STARTUP_SONG SONG(PREONIC_SOUND)
+#    define GOODBYE_SONG SONG(STARTUP_SOUND)
+#    define MUSIC_ON_SONG SONG(TERMINAL_SOUND)
 #endif
 
-#define TAPPING_TERM 200
+#undef  TEMPO_DEFAULT
 
-#define UNICODE_SELECTED_MODES UC_WINC                                
-#define UNICODE_KEY_WINC KC_LALT
-
-#define MUSIC_MASK (keycode != KC_NO)
-
-
-/* 
- * Underglow Options
- */
-
-#define RGHLIGHT_HUE_STEP 10
+#define TEMPO_DEFAULT 200
 
 
 /*
@@ -48,3 +36,5 @@
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
+
+

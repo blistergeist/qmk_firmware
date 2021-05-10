@@ -1,5 +1,6 @@
 #pragma once
 
+
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PREONIC_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
@@ -10,20 +11,7 @@
                                 }
 #endif
 
-#define TAPPING_TERM 200
-
-#define UNICODE_SELECTED_MODES UC_WINC                                
-#define UNICODE_KEY_WINC KC_LALT
-
 #define MUSIC_MASK (keycode != KC_NO)
-
-
-/* 
- * Underglow Options
- */
-
-#define RGHLIGHT_HUE_STEP 10
-
 
 /*
  * MIDI options
