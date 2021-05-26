@@ -51,10 +51,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
 */
 	[COLEMAK] = LAYOUT(
-		KC_NO,	KC_Q,	        KC_W,	        KC_F,	        KC_P,	        KC_G,								/**/								KC_J,				KC_L,			KC_U,			KC_Y,			KC_SCLN,		KC_NO,
-		KC_NO,	GUI_T(KC_A),    ALT_T(KC_R),	SFT_T(KC_S),	CTL_T(KC_T),	KC_D,								/**/								KC_H,				CTL_T(KC_N),	SFT_T(KC_E),	ALT_T(KC_I),	GUI_T(KC_O),	KC_QUOT,
-		KC_NO,	KC_Z,	        KC_X,	        KC_C,	        KC_V,	        KC_B,				KC_NO,	KC_NO,	/**/	KC_NO,	KC_NO,				KC_K,				KC_M,			KC_COMM,		KC_DOT,			KC_SLSH,		KC_CAPS,
-												KC_MPLY,        KC_TAB,         LT(LOWER, KC_ESC),	KC_SPC,	KC_NO,	/**/	KC_NO,	LSFT_T(KC_BSPC),    LT(RAISE, KC_DEL),	KC_ENT, 		KC_MUTE
+		KC_NO,	KC_Q,	        KC_W,	        KC_F,	        KC_P,	        KC_G,						/**/							KC_J,				KC_L,			KC_U,			KC_Y,			KC_SCLN,		KC_NO,
+		KC_NO,	GUI_T(KC_A),    ALT_T(KC_R),	SFT_T(KC_S),	CTL_T(KC_T),	KC_D,						/**/							KC_H,				CTL_T(KC_N),	SFT_T(KC_E),	ALT_T(KC_I),	GUI_T(KC_O),	KC_QUOT,
+		KC_NO,	KC_Z,	        KC_X,	        KC_C,	        KC_V,	        KC_B,		KC_NO,	KC_NO,  /**/	KC_NO,	    KC_NO,		KC_K,				KC_M,			KC_COMM,		KC_DOT,			KC_SLSH,		KC_CAPS,
+												KC_MPLY,        KC_TAB,         MO(LOWER),  KC_SPC, KC_ESC,	/**/	KC_BSPC,    KC_LSFT,    LT(RAISE, KC_DEL),	KC_ENT, 		KC_MUTE
 	),
 
 /*
@@ -72,10 +72,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
 	[LOWER] = LAYOUT(
-	  KC_NO,	KC_NO,		KC_NO,		KC_LCBR,	KC_RCBR,	KC_NO,												    KC_PLUS,			KC_7,	KC_8,	KC_9,	KC_ASTR,	KC_NO,
-	  KC_NO,	KC_MINS,	KC_UNDS,	KC_LPRN,	KC_RPRN,	KC_GRV,												    KC_MINS,			KC_4,	KC_5,	KC_6,	KC_PIPE,	KC_NO,
+	  KC_NO,	KC_NO,		KC_NO,		KC_LCBR,	KC_RCBR,	KC_NO,							/**/					KC_PLUS,			KC_7,	KC_8,	KC_9,	KC_ASTR,	KC_NO,
+	  KC_NO,	KC_MINS,	KC_UNDS,	KC_LPRN,	KC_RPRN,	KC_GRV,							/**/					KC_MINS,			KC_4,	KC_5,	KC_6,	KC_PIPE,	KC_NO,
 	  KC_NO,	KC_NO,		KC_NO,		KC_LBRC,	KC_RBRC,	KC_TILD,	SGUI(KC_S),	KC_NO,	/**/	KC_NO,	KC_NO,	KC_EQL,				KC_1,	KC_2,	KC_3,	KC_BSLS,	KC_NO,
-										KC_NO,		KC_NO,		KC_NO,		KC_NO,	    KC_NO,	/**/	KC_NO,	KC_SPC,	LT(ADJUST, KC_0),	KC_DOT,	KC_NO
+										KC_NO,		KC_NO,		KC_NO,		KC_NO,	    KC_NO,	/**/	KC_NO,	KC_0,	LT(ADJUST, KC_DOT),	KC_NO,	KC_NO
 	),
 
 /*
@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
 	[RAISE] = LAYOUT(
-	  KC_NO,	KC_EXLM,	    KC_AT,          KC_HASH,	    KC_DLR,	        KC_PERC,												KC_CIRC,	KC_AMPR,	KC_ASTR,	KC_UNDS,	KC_MINS,	KC_NO,
-	  KC_F1,	GUI_T(KC_F2),   ALT_T(KC_F3),	SFT_T(KC_F4),	CTL_T(KC_F5),	KC_F6,													KC_NO,		KC_LEFT,	KC_DOWN,	KC_UP,		KC_RIGHT,	KC_NO,
-	  KC_F7,	KC_F8,		    KC_F9,	        KC_F10,		    KC_F11,         KC_F12,		KC_NO,	KC_NO,		/**/	KC_NO,	KC_NO,	KC_NO,		KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,		KC_NO,
+	  KC_NO,	KC_EXLM,	    KC_AT,          KC_HASH,	    KC_DLR,	        KC_PERC,						/**/					KC_CIRC,	KC_AMPR,	KC_ASTR,	KC_UNDS,	KC_MINS,	KC_NO,
+	  KC_NO,	GUI_T(KC_HOME), ALT_T(KC_PGDN),	SFT_T(KC_PGUP),	CTL_T(KC_END),	KC_NO,							/**/					KC_NO,		KC_LEFT,	KC_DOWN,	KC_UP,		KC_RIGHT,	KC_NO,
+	  KC_F12,   KC_F1,		    KC_F2,	        KC_F3,		    KC_F4,          KC_F5,		KC_NO,	KC_NO,		/**/	KC_NO,	KC_NO,	KC_F6,		KC_F7,      KC_F8,      KC_F9,      KC_F10,		KC_F11,
 									            KC_NO,          KC_NO,          MO(ADJUST),	KC_NO,	KC_NO,		/**/	KC_NO,	KC_NO,	KC_NO,		KC_NO,		KC_NO
 	),
 
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  .-------------+------+------+------+------+------+--------|
  * |   XXX  |   Z  |   X  |   C  |   V  |   B  | XXX  |      |  |      | XXX  |   N  |   M  | ,  < | . >  | /  ? |  CAPS  |
  * `----------------------+------+------+------+------+      |  |      +------+------+------+------+----------------------'
- *                        | XXX  | Tab  |  Esc | Space|  XXX |  | XXX  | Bksp |  Del | Enter| MUTE |
+ *                        | XXX  | Tab  |  Esc | Space| Shift|  | XXX  | Bksp |  Del | Enter| MUTE |
  *                        |      |      | Lower|      |      |  |      | Shift| Raise|      |      |
  *                        `----------------------------------'  `----------------------------------'
 */
@@ -124,9 +124,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Game Lower Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |        |  1   |  2   |  3   |  4   |  5   |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |        |  6   |  7   |  8   |  9   |  0   |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
@@ -135,12 +135,53 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
 	[GLOWER] = LAYOUT(
-	  KC_NO,    KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,											KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO, KC_NO,
-	  KC_NO,    KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,									        KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
+	  KC_NO,    KC_1,	KC_2,	KC_3,	KC_4,	KC_5,					/**/				    KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO, KC_NO,
+	  KC_NO,    KC_6,	KC_7,	KC_8,	KC_9,	KC_0,					/**/				    KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
 	  KC_NO,    KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,  /**/	KC_NO,	KC_NO,	KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO, KC_NO,
 								KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	/**/	KC_NO,	KC_NO,	MO(ADJUST),	KC_NO,	KC_NO
 	),
 
+/*
+ * Game Layer
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |   XXX  |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |  P   |  XXX   |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |   XXX  |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |  ;   |  ' "   |
+ * |--------+------+------+------+------+------+-------------.  .-------------+------+------+------+------+------+--------|
+ * |   XXX  |   Z  |   X  |   C  |   V  |   B  | XXX  |      |  |      | XXX  |   N  |   M  | ,  < | . >  | /  ? |  CAPS  |
+ * `----------------------+------+------+------+------+      |  |      +------+------+------+------+----------------------'
+ *                        | XXX  | Tab  |  Esc | Space| Shift|  | XXX  | Bksp |  Del | Enter| MUTE |
+ *                        |      |      | Lower|      |      |  |      | Shift| Raise|      |      |
+ *                        `----------------------------------'  `----------------------------------'
+*/
+	[AOE] = LAYOUT(
+		KC_LCTRL,	KC_Q,	 KC_W,	KC_E,	    KC_R,	KC_T,								            /**/						    KC_Y,	KC_U,	KC_I,		KC_O,   KC_P,		KC_NO,
+		KC_LALT,    KC_A,    KC_S,  KC_D,	    KC_F,	KC_G,								            /**/						    KC_H,	KC_J,	KC_K,       KC_L,	KC_SCLN,    KC_QUOT,
+		KC_NO,	    KC_Z,	 KC_X,	KC_C,	    KC_V,	KC_B,				    S(KC_G),	KC_NO,      /**/	KC_NO,	    KC_NO,	    KC_N,	KC_M,	KC_COMM,	KC_DOT,	KC_SLSH,	KC_CAPS,
+								    KC_MPLY,    KC_TAB, LT(AOERAISE, KC_ESC),	KC_SPC,	    KC_LSFT,	/**/	KC_BSPC,    KC_LSFT,    KC_DEL,	KC_ENT, KC_MUTE
+	),
+
+/*
+ * Game Lower Layer
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |  1   |  2   |  3   |  4   |  5   |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |  6   |  7   |  8   |  9   |  0   |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+	[AOERAISE] = LAYOUT(
+	  KC_0,         KC_1,       KC_2,	    KC_3,	    KC_4,	    KC_5,							/**/				        KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
+	  S(KC_0),      S(KC_1),    S(KC_2),	S(KC_3),	S(KC_4),	S(KC_5),						/**/			            KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
+	  C(S(KC_G)),   C(S(KC_Q)),	C(S(KC_W)),	C(S(KC_E)),	C(S(KC_R)),	C(S(KC_T)),	KC_NO,	    KC_NO,  /**/	KC_NO,	KC_NO,	KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
+								            KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	/**/	KC_NO,	KC_NO,	MO(ADJUST),	KC_NO,	KC_NO
+	),
 
 /*
  * Adjust Layer
@@ -157,10 +198,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
 	[ADJUST] = LAYOUT(
-	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,											            KC_NO,			KC_NO,		    KC_NO,		KC_NO,		KC_NO,			KC_NO,
-	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	SGUI(KC_LEFT),									            SGUI(KC_RIGHT),	G(KC_LEFT),	    G(KC_DOWN),	G(KC_UP),	G(KC_RIGHT),	KC_NO,
-	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	        TO(GAME),	KC_NO,  /**/	KC_NO,	KC_NO,	TO(COLEMAK),	KC_NO,		KC_NO,		KC_NO,		KC_NO,			KC_NO,
-								KC_NO,	KC_NO,	KC_NO,	        KC_NO,	    KC_NO,	/**/	KC_NO,	KC_NO,	KC_NO,			KC_NO,		KC_NO
+	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	    KC_NO,								/**/			        KC_NO,			KC_NO,		KC_NO,		KC_NO,		KC_NO,			KC_NO,
+	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,	    SGUI(KC_LEFT),						/**/			        SGUI(KC_RIGHT),	G(KC_LEFT),	G(KC_DOWN),	G(KC_UP),	G(KC_RIGHT),	KC_NO,
+	  KC_NO,	KC_NO,	KC_NO,	KC_NO,	TO(AOE),	KC_NO,	        TO(GAME),	KC_NO,  /**/	KC_NO,	KC_NO,	TO(COLEMAK),	KC_NO,		KC_NO,		KC_NO,		KC_NO,			KC_NO,
+								KC_NO,	KC_NO,	    KC_NO,	        KC_NO,	    KC_NO,	/**/	KC_NO,	KC_NO,	KC_NO,			KC_NO,		KC_NO
 	),
 
 // /*

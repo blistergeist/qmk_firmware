@@ -42,7 +42,7 @@
 #define LEADER_PER_KEY_TIMING
 #define LEADER_TIMEOUT 350
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 175
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // Allows to use either side as the master. Look at the documentation for info:
