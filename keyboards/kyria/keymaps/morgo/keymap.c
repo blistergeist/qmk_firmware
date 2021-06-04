@@ -51,8 +51,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
 */
 	[COLEMAK] = LAYOUT(
-		KC_NO,	KC_Q,	        KC_W,	        KC_F,	        KC_P,	        KC_G,						    /**/							KC_J,				KC_L,			KC_U,			KC_Y,			KC_SCLN,		KC_NO,
-		KC_NO,	GUI_T(KC_A),    ALT_T(KC_R),	SFT_T(KC_S),	CTL_T(KC_T),	KC_D,						    /**/							KC_H,				CTL_T(KC_N),	SFT_T(KC_E),	ALT_T(KC_I),	GUI_T(KC_O),	KC_QUOT,
+		KC_NO,	KC_Q,	        LT(0,KC_W),	    LT(0,KC_F),	    KC_P,	        KC_G,						    /**/							KC_J,				LT(0,KC_L),     KC_U,			KC_Y,			KC_SCLN,		KC_NO,
+		KC_NO,	LT(0,KC_A),     LT(0,KC_R),	    LT(0,KC_S),	    LT(0,KC_T),	    LT(0,KC_D),						/**/							KC_H,				LT(0,KC_N),	    KC_E,	        KC_I,           LT(0,KC_O),     KC_QUOT,
 		KC_NO,	GUI_T(KC_Z),	ALT_T(KC_X),	SFT_T(KC_C),	CTL_T(KC_V),	KC_B,		TO(AOE),	KC_NO,  /**/	KC_NO,	    KC_NO,		KC_K,				CTL_T(KC_M),	SFT_T(KC_COMM),	ALT_T(KC_DOT),	GUI_T(KC_SLSH),	KC_CAPS,
 												KC_MPLY,        KC_TAB,         MO(LOWER),  KC_SPC,     KC_ESC,	/**/	KC_BSPC,    KC_LSFT,    LT(RAISE, KC_DEL),	KC_ENT, 		KC_MUTE
 	),
@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
 	[RAISE] = LAYOUT(
-	  KC_NO,	KC_1,	        KC_2,	        KC_3,	        KC_4,	        KC_5,						        /**/					KC_6,	    KC_7,	        KC_8,	        KC_9,	        KC_0,               KC_NO,
-	  KC_NO,	GUI_T(KC_HOME), ALT_T(KC_PGDN),	SFT_T(KC_PGUP),	CTL_T(KC_END),	KC_NO,							    /**/					KC_NO,		CTL_T(KC_LEFT),	SFT_T(KC_DOWN),	ALT_T(KC_UP),	GUI_T(KC_RIGHT),	KC_NO,
-	  KC_F12,   GUI_T(KC_F1),	ALT_T(KC_F2),	SFT_T(KC_F3),	CTL_T(KC_F4),   KC_F5,		KC_NO,	    KC_NO,		/**/	KC_NO,	KC_NO,	KC_F6,		GUI_T(KC_F7),   ALT_T(KC_F8),   SFT_T(KC_F9),   CTL_T(KC_F10),		KC_F11,
+	  KC_NO,	KC_1,	        KC_2,	        KC_3,	        KC_4,	        KC_5,						        /**/					KC_6,	    KC_7,	        KC_8,	        KC_9,	        KC_0,           KC_NO,
+	  KC_NO,	KC_HOME,        KC_PGDN,        KC_PGUP,	    KC_END,	        KC_NO,							    /**/					KC_NO,		KC_LEFT,	    KC_DOWN,	    KC_UP,	        KC_RIGHT,       KC_NO,
+	  KC_F12,   GUI_T(KC_F1),	ALT_T(KC_F2),	SFT_T(KC_F3),	CTL_T(KC_F4),   KC_F5,		KC_NO,	    KC_NO,		/**/	KC_NO,	KC_NO,	KC_F6,		GUI_T(KC_F7),   ALT_T(KC_F8),   SFT_T(KC_F9),   CTL_T(KC_F10),	KC_F11,
 									            KC_NO,          KC_NO,          MO(ADJUST),	KC_TRNS,	KC_TRNS,	/**/	KC_NO,	KC_NO,	KC_NO,		KC_NO,		    KC_NO
 	),
 
@@ -243,13 +243,22 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	switch (keycode) {
+	if ((keycode & 0xFF00) == 0x4000) {
+        if (record->tap.count) {
+            return true;
+        }
+        else if (record->event.pressed) {
+            keycode = keycode & 0xFF;
+            tap_code16(C(keycode));
+        return false;
+        }
+    }
+    switch (keycode) {
 		case KC_CCCV:  // One key copy/paste
 			if (record->event.pressed) {
 				copy_paste_timer = timer_read();
 			} else {
-				if (timer_elapsed(copy_paste_timer) > TAPPING_TERM) {  // Hold, copy
-					tap_code16(LCTL(KC_C));
+				if (timer_elapsed(copy_paste_timer) > TAPPING_TERM) {  // Hold, copytap_code16(LCTL(KC_C));
 				} else { // Tap, paste
 					tap_code16(LCTL(KC_V));
 				}
