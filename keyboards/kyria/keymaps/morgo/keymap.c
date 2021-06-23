@@ -51,10 +51,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
 */
 	[COLEMAK] = LAYOUT(
-        KC_NO,      KC_Q,       LT(0,KC_W), LT(0,KC_F), KC_P,           KC_G,                           /**/                            KC_J,               LT(0,KC_L),     KC_U,           KC_Y,           KC_SCLN,        KC_NO,
-        KC_LGUI,    LT(0,KC_A), LT(0,KC_R), LT(0,KC_S), LT(0,KC_T),     LT(0,KC_D),                     /**/                            KC_H,               LT(0,KC_N),     KC_E,           LT(0,KC_I),     LT(0,KC_O),     KC_QUOT,
-        KC_LALT,    LT(0,KC_Z), LT(0,KC_X), LT(0,KC_C), LT(0,KC_V),     LT(0,KC_B), TO(LOWER),  KC_NO,  /**/    KC_NO,      TO(RAISE),  KC_K,               CTL_T(KC_M),    SFT_T(KC_COMM), ALT_T(KC_DOT),  GUI_T(KC_SLSH), KC_CAPS,
-                                            KC_MPLY,    CTL_T(KC_TAB),  MO(LOWER),  KC_SPC,     KC_ESC, /**/    KC_BSPC,    KC_LSFT,    LT(RAISE, KC_DEL),  CTL_T(KC_ENT),  KC_MUTE
+        KC_NO,      KC_Q,       LT(0,KC_W), LT(0,KC_F), KC_P,           KC_G,                                   /**/                            KC_J,               LT(0,KC_L),     KC_U,           KC_Y,           KC_SCLN,        KC_NO,
+        KC_LGUI,    LT(0,KC_A), LT(0,KC_R), LT(0,KC_S), LT(0,KC_T),     LT(0,KC_D),                             /**/                            KC_H,               LT(0,KC_N),     KC_E,           LT(0,KC_I),     LT(0,KC_O),     KC_QUOT,
+        KC_LALT,    LT(0,KC_Z), LT(0,KC_X), LT(0,KC_C), LT(0,KC_V),     LT(0,KC_B), TO(LOWER),  KC_NO,          /**/    KC_NO,      TO(RAISE),  KC_K,               CTL_T(KC_M),    SFT_T(KC_COMM), ALT_T(KC_DOT),  GUI_T(KC_SLSH), KC_CAPS,
+                                            KC_MPLY,    CTL_T(KC_TAB),  MO(LOWER),  KC_SPC,     SFT_T(KC_ESC),  /**/    KC_BSPC,    KC_LSFT,    LT(RAISE, KC_DEL),  CTL_T(KC_ENT),  KC_MUTE
     ),
 
 /*
@@ -158,8 +158,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[AOE] = LAYOUT(
 		KC_LCTRL,	KC_Q,	 KC_W,	KC_E,	    KC_R,	KC_T,								            /**/						    KC_Y,	KC_U,	KC_I,		KC_O,   KC_P,		KC_NO,
 		KC_LALT,    KC_A,    KC_S,  KC_D,	    KC_F,	KC_G,								            /**/						    KC_H,	KC_J,	KC_K,       KC_L,	KC_SCLN,    KC_QUOT,
-		KC_NO,	    KC_Z,	 KC_X,	KC_C,	    KC_V,	KC_B,				    S(KC_G),	KC_NO,      /**/	KC_NO,	    KC_NO,	    KC_N,	KC_M,	KC_COMM,	KC_DOT,	KC_SLSH,	KC_CAPS,
-								    KC_MPLY,    KC_TAB, LT(AOERAISE, KC_ESC),	KC_SPC,	    KC_LSFT,	/**/	KC_BSPC,    KC_LSFT,    KC_DEL,	KC_ENT, KC_MUTE
+		C(S(KC_G)),	KC_Z,	 KC_X,	KC_C,	    KC_V,	KC_B,				    A(S(KC_G)), KC_NO,      /**/	KC_NO,	    KC_NO,	    KC_N,	KC_M,	KC_COMM,	KC_DOT,	KC_SLSH,	KC_CAPS,
+								    KC_F5,      KC_TAB, LT(AOERAISE, KC_ESC),	KC_SPC,	    KC_LSFT,	/**/	KC_BSPC,    KC_LSFT,    KC_DEL,	KC_ENT, KC_MUTE
 	),
 
 /*
@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[AOERAISE] = LAYOUT(
 	  KC_0,         KC_1,       KC_2,	    KC_3,	    KC_4,	    KC_5,							/**/				            KC_6,	    KC_7,	KC_8,	KC_9,  KC_0,  KC_NO,
 	  S(KC_0),      S(KC_1),    S(KC_2),	S(KC_3),	S(KC_4),	S(KC_5),						/**/			                KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
-	  C(S(KC_G)),   C(S(KC_Q)),	C(S(KC_W)),	C(S(KC_E)),	C(S(KC_R)),	C(S(KC_T)),	KC_NO,	    KC_NO,  /**/	KC_NO,	TO(COLEMAK),	KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
+	  C(S(KC_C)),   C(S(KC_Q)),	C(S(KC_W)),	C(S(KC_E)),	C(S(KC_R)),	C(S(KC_T)),	KC_NO,	    KC_NO,  /**/	KC_NO,	TO(COLEMAK),	KC_NO,	    KC_NO,	KC_NO,	KC_NO,  KC_NO,  KC_NO,
 								            KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	/**/	KC_NO,	KC_NO,	        MO(ADJUST),	KC_NO,	KC_NO
 	),
 
